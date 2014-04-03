@@ -1,9 +1,7 @@
-PencilBox::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -53,4 +51,29 @@ PencilBox::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+PencilBox::Application.routes.draw do
+    
+  # get "admin/index"
+  # get "parent/index"
+  # get "teacher/index"
+  
+  get 'admin_view' => 'admin#index'
+  post 'admin_view' => 'admin#index'
+  get 'parent_view' => 'parent#index'
+  post 'parent_view' => 'parent#index'
+  get 'teacher_view' => 'teacher#index'
+  post 'teacher_view' => 'teacher#index'
+  
+  controller :login do
+      get 'login' => :new
+      post 'login' => :create
+      get 'logout' => :destroy
+  end
+
+  resources :users
+
+  #App index page    
+  root 'login#new'
+
 end

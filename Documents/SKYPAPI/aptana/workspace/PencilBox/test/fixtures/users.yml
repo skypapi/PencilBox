@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 9999999
+  username: testparent1
+  password_digest: <%= BCrypt::Password.create('secret') %>
+  firstname: TestParentFN1
+  lastname: TestParentLN1
+  userprofile: 1
+  isactive: false
+  remarks: Test remarks
+
+two:
+  id: 99999991
+  username: testparent2
+  password_digest: <%= BCrypt::Password.create('secret') %>
+  firstname: TestParentFN2
+  lastname: TestParentLN2
+  userprofile: 1
+  isactive: false
+  remarks: Test remarks
